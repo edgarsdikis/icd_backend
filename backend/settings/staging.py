@@ -29,14 +29,14 @@ CSRF_COOKIE_SECURE = True
 # CORS settings - hardcoded
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    'https://development-five-ochre.vercel.app/',
+    'https://development-five-ochre.vercel.app',
 ]
 CORS_ALLOW_CREDENTIALS = True
 
 # Hardcoded trusted origins
 CSRF_TRUSTED_ORIGINS = [
     'https://icd-backend-develop-api.onrender.com',
-    'https://development-five-ochre.vercel.app/'
+    'https://development-five-ochre.vercel.app'
 ]
 
 # Static files
