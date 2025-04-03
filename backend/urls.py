@@ -5,6 +5,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
     path("api/users/", include("users.urls")),
-    path("api/wallets/", include("wallets.urls")),
-    path("api/tokens/", include("tokens.urls")),
+    path("api/", include("portfolio.urls")),  # This replaces wallets and tokens URLs
 ]

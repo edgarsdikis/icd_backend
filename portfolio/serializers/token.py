@@ -1,7 +1,5 @@
-# Create a new file: tokens/serializers.py
-
 from rest_framework import serializers
-from .models import Token, WalletToken
+from ..models import Token, WalletToken
 
 class TokenSerializer(serializers.ModelSerializer):
     """Serializer for Token model"""
@@ -28,3 +26,17 @@ class WalletTokenSerializer(serializers.ModelSerializer):
             'token': {'write_only': True},
             'wallet': {'write_only': True}
         }
+
+class AggregatedAssetSerializer(serializers.Serializer):
+    """Serializer for aggregated token data across wallets"""
+    symbol = serializers.CharField()
+    name = serializers.CharField()
+    chain = serializers.CharField()
+    price = serializers.DecimalField(max_digits=30, decimal_places=18, allow_null=True)
+    price_24h_change_percent = serializers.DecimalField(max_digits=30, decimal_places=18, allow_null=True)
+    price_24h_change_usd = serializers.DecimalField(max_digits=30, decimal_places=18, allow_null=True)
+    logo = serializers.URLField(allow_null=True)
+    thumbnail = serializers.URLField(allow_null=True)
+    total_amount = serializers.DecimalField(max_digits=30, decimal_places=18)
+    total_value = serializers.DecimalField(max_digits=30, decimal_places=18)
+    total_value_24h_change = serializers.DecimalField(max_digits=30, decimal_places=18, allow_null=True)

@@ -1,5 +1,5 @@
 from django.db import models
-from wallets.models import Wallet
+from .wallet import Wallet
 
 class Token(models.Model):
     """
@@ -36,7 +36,7 @@ class WalletToken(models.Model):
     # Balance information
     token_balance_formatted = models.DecimalField(max_digits=30, decimal_places=18, null=True, blank=True)
     usd_value = models.DecimalField(max_digits=30, decimal_places=18, null=True, blank=True)
-    usd_value_24h_usd_change = models.DecimalField(max_digits=30, decimal_places=18, null=True, blank= True)
+    usd_value_24h_usd_change = models.DecimalField(max_digits=30, decimal_places=18, null=True, blank=True)
 
     class Meta:
         # ensure unique wallet, chain and token entry is unique

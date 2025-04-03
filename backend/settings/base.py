@@ -24,8 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
-    'wallets',
-    'tokens',
+    'portfolio',
     'rest_framework',
     'corsheaders',
 ]
@@ -87,10 +86,15 @@ SIMPLE_JWT = {
 }
 
 # Internationalization
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'en-gb'  # British English uses 24-hour format by default
+TIME_ZONE = 'Europe/Riga'  # Riga time zone
 USE_I18N = True
 USE_TZ = True
+
+# Explicitly set date and time formats to use 24-hour format
+DATE_FORMAT = 'd F Y'  # Example: 3 April 2025
+TIME_FORMAT = 'H:i'    # 24-hour format, example: 14:30 (instead of 2:30 PM)
+DATETIME_FORMAT = 'd F Y H:i'  # Example: 3 April 2025 14:30
 
 # Static files
 STATIC_URL = 'static/'

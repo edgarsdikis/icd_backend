@@ -3,7 +3,7 @@ from django.conf import settings
 
 class Wallet(models.Model):
     """
-    Simple model to store wallet information and balance
+    Model to store wallet information and balance
     """
     address = models.CharField(max_length=255)
     chain = models.CharField(max_length=50)  
@@ -19,7 +19,7 @@ class Wallet(models.Model):
 
 class WalletUser(models.Model):
     """
-    Simple association between users and wallets
+    Association between users and wallets
     """
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     wallet = models.ForeignKey(Wallet, on_delete=models.CASCADE)
